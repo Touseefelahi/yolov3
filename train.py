@@ -356,7 +356,7 @@ def train():
             # Save best checkpoint
             if best_fitness == fi:
                 torch.save(chkpt, best)
-
+                save_weights(model, path='weights/best.weights', cutoff=-1)
             # Save backup every 10 epochs (optional)
             # if epoch > 0 and epoch % 10 == 0:
             #     torch.save(chkpt, wdir + 'backup%g.pt' % epoch)
